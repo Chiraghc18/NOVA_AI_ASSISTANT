@@ -11,6 +11,7 @@ import faiss
 import pickle
 from sentence_transformers import SentenceTransformer
 import re
+sd.default.device = 13
 # ------------------------------
 # LOAD MODELS
 # ------------------------------
@@ -74,7 +75,7 @@ def retrieve_memory(query, k=3):
 # RECORD AUDIO
 # ------------------------------
 
-def record_audio(filename="input.wav", duration=4, fs=16000):
+def record_audio(filename="input.wav", duration=4, fs=48000):
     print("🎤 Please speak your query...")
     audio = sd.rec(int(duration * fs), samplerate=fs, channels=1)
     sd.wait()
@@ -114,6 +115,7 @@ def get_ollama_response(prompt):
             "Use relevant past memory if helpful.\n"
             "Give short, clear answers.\n"
             "Maximum 3 short lines.\n"
+            "try to be smart and funny .\n"
         )
 
         past_memory = retrieve_memory(prompt)
