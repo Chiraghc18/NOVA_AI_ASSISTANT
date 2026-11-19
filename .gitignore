@@ -1,0 +1,27 @@
+# Virtual environment
+py310_env/
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Personal NOVA data
+nova_memory.pkl
+nova_faiss.index
+nova_conversation.json
+nova_conversation.json.tmp
+
+
+# Audio files (keep reference voice)
+*.wav
+!reference.wav
+!input.wav
+!output.wav
+
+# Secrets and editor/OS files
+.env
+.vscode/
+.DS_Store
+Thumbs.db

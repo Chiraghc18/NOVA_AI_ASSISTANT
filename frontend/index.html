@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOVA</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app">
+
+    <main class="stage">
+      <header class="top">
+        <div class="brand">NOVA</div>
+        <div class="status-pill" id="statusPill"><span class="dot"></span><span id="statusText">Idle</span></div>
+      </header>
+
+      <section class="orb-wrap">
+        <div class="orb" id="orb" data-state="idle">
+          <div class="ring r1"></div>
+          <div class="ring r2"></div>
+          <div class="ring r3"></div>
+          <div class="core"></div>
+        </div>
+        <div class="note" id="note"></div>
+        <div class="controls">
+          <button id="micBtn" class="mic" title="Talk to NOVA">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg>
+          </button>
+          <button id="stopBtn" class="ghost" title="Stop speaking">Stop</button>
+        </div>
+      </section>
+
+      <section class="chat">
+        <div class="messages" id="messages"></div>
+        <form class="composer" id="composer">
+          <input id="textInput" type="text" placeholder="Type a message to NOVA..." autocomplete="off">
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <aside class="side">
+      <nav class="tabs">
+        <button class="tab active" data-tab="memory">Memory</button>
+        <button class="tab" data-tab="settings">Settings</button>
+      </nav>
+
+      <div class="panel" id="panel-memory">
+        <div class="panel-title">Long-term memories <span id="memCount"></span></div>
+        <div id="memList" class="mem-list"></div>
+      </div>
+
+      <div class="panel hidden" id="panel-settings">
+        <div class="panel-title">System</div>
+        <dl class="kv" id="kv"></dl>
+        <div class="panel-title">Ollama model</div>
+        <select id="modelSelect"></select>
+        <p class="hint">Switching applies to the next question.</p>
+        <div class="panel-title">Microphone</div>
+        <select id="micSelect"></select>
+        <div class="panel-title">Speaker</div>
+        <select id="spkSelect"></select>
+        <p class="hint">Audio device changes are remembered.</p>
+      </div>
+    </aside>
+
+  </div>
+  <script src="/static/script.js"></script>
+</body>
+</html>
