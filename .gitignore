@@ -19,6 +19,7 @@ nova_conversation.json.tmp
 !reference.wav
 !input.wav
 !output.wav
+!reference.wav
 
 # Secrets and editor/OS files
 .env

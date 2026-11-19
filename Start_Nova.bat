@@ -1,4 +1,4 @@
-_NOVA.bat
+Start_Nova.bat
 @echo off
 title NOVA Server
 cd /d "%~dp0"
